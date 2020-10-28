@@ -1,6 +1,6 @@
 pipeline {
     agent {
-       docker { image 'ruby:2.7.2' }
+       docker { image 'ruby:2.5' }
     }
 
     options {
@@ -10,7 +10,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'bundle update --bundler'
                 sh 'bundle install'
             }
         }
