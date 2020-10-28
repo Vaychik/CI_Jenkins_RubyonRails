@@ -1,6 +1,6 @@
 pipeline {
     agent {
-       docker { image 'ruby:2.5.2' }
+       docker { image 'ruby:2.5' }
     }
 
     options {
