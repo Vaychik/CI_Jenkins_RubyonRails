@@ -10,8 +10,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'gem install bundler:1.16.3'
                 sh 'bundle install'
-                sh 'bundle update --bundler'
             }
         }
     }
