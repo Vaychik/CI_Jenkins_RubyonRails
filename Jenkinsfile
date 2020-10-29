@@ -11,6 +11,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'bundle --version'
+                sh 'bundle install'
+
             }
         }
     }
