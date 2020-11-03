@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-       docker { image 'ruby:2.5' }
-    }
+    agent none
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
