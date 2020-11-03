@@ -10,9 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'bundle --version'
-                sh 'bundle install'
-
+                sh 'docker pull docker/getting-started'
             }
         }
     }
