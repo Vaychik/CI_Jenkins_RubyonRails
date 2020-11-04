@@ -6,8 +6,6 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10'))
     }
     
-    tool Docker
-    
     stages {
         stage('Build') {
             agent {
