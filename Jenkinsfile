@@ -21,7 +21,7 @@ pipeline {
                 sh 'ls -lrt $WORKSPACE'
                 sh 'chmod 400 nomenclature.pem'
                 sh 'scp -o StrictHostKeyChecking=no -i nomenclature.pem $WORKSPACE/${IMAGE_FILE}.tar ubuntu@${HOST_1}:/${IMAGE_PATH}'
-                sh 'ssh -i nomenclature.pem ubuntu@{HOST_1} /scripts/deploy.sh'
+                sh 'ssh -i nomenclature.pem ubuntu@${HOST_1} /scripts/deploy.sh'
             }    
         }
         
