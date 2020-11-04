@@ -8,8 +8,8 @@ pipeline {
     
     stages {
         stage('Build') {
-            agent {
-                docker {image 'benhall/dind-jenkins-agent'}
+            tools {
+                docker 'Docker' 
             }
                 
             steps {
