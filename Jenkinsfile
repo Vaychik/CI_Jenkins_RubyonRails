@@ -9,8 +9,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker -H tcp://0.0.0.0:2375 images'
-                sh 'docker -H tcp://0.0.0.0:2375 pull docker/getting-started docker101tutorial'
+                sh 'echo "export DOCKER_HOST='tcp://0.0.0.0:2375'" >> ~/.bashrc'
+                sh 'source ~/.bashrc'    
+                sh 'docker images'
+            
             }    
         }
         
