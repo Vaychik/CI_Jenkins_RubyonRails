@@ -31,9 +31,7 @@ pipeline {
     }
     
     post {
-        always {
-            sh 'rm -f $WORKSPACES/${IMAGE_FILE}.tar'
-        }
+        always { }
     }
     
 }
