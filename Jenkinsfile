@@ -13,8 +13,8 @@ pipeline {
             }
                 
             steps {
-                sh 'docker -v /var/run/docker.sock:/var/run/docker.sock pull maven:latest'
-                sh "docker ps"
+                sh 'mount /var/run/docker.sock /var/run/docker.sock'
+                sh 'docker pull docker:19'
             }    
         }
         
