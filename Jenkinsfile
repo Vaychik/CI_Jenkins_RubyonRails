@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             tools {
-                docker 'Docker' 
+                dockerTool 'Docker' 
             }
                 
             steps {
