@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker -H tcp://0.0.0.0:2375 images'
-                sh 'docker -H tcp://0.0.0.0:2375 pull maven:latest'
+                sh 'docker -H tcp://0.0.0.0:2375 pull docker/getting-started'
             }    
         }
         
