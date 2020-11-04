@@ -10,7 +10,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "export DOCKER_HOST=localhost:2375" >> ~/.bashrc'
-                sh 'source ~/.bashrc'    
                 sh 'docker images'
             
             }    
