@@ -22,10 +22,4 @@ pipeline {
         
     }
     
-    post {
-        always {
-            sh 'End of the Jenkinsfile'
-        }
-    }
-    
 }
