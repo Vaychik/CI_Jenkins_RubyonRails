@@ -11,9 +11,8 @@ pipeline {
             agent {label "master"
                 }
                 
-            
             steps {
-                sh 'pwd'
+                sh 'docker pull docker/getting-started'
                 sh 'ls -lrt'
                 sh 'ruby --version'
             }    
