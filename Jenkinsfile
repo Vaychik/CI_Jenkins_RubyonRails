@@ -1,6 +1,6 @@
 pipeline {
     
-    agent none
+    agent {label 'master'}
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
