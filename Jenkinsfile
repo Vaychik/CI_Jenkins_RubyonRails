@@ -23,6 +23,7 @@ pipeline {
                 sh 'chmod 400 nomenclature.pem'
                 sh 'scp -o StrictHostKeyChecking=no -i nomenclature.pem $WORKSPACE/${IMAGE_FILE}.tar ${USER}@${HOST_1}:/${IMAGE_PATH}'
                 sh 'ssh -i nomenclature.pem ${USER}@${HOST_1} /scripts/deploy.sh'
+                sh 'rm -f $WORKSPACES/${docker101tutorial}.tar'
             }    
         }
         
