@@ -13,7 +13,7 @@ pipeline {
             }
                 
             steps {
-                sh 'docker pull docker/getting-started'
+                sh 'docker -v /var/run/docker.sock:/var/run/docker.sock pull maven:latest'
             }    
         }
         
