@@ -1,6 +1,6 @@
 pipeline {
     
-    agent {label 'master'}
+    agent none
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -8,13 +8,14 @@ pipeline {
     
     stages {
         stage('Build') {
-            tools {
-                dockerTool 'Docker' 
+            agent {
+                docker {image 'docker:19'
+                        args '-v /var/run/docker.sock:/var/run/docker.sock'
+                }
             }
                 
             steps {
-                sh 'mount /var/run/docker.sock /var/run/docker.sock'
-                sh 'docker pull docker:19'
+                sh 'docker pull maven:latest'
             }    
         }
         
