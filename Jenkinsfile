@@ -16,7 +16,8 @@ pipeline {
                 docker {image 'ruby --version'}
             }
             steps {
-                sh 'ruby --version'
+                sh 'pwd'
+                sh 'ls -lrt'
             }    
         }
         
