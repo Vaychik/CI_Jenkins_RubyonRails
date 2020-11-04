@@ -6,9 +6,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10'))
     }
     
-    environment {
-        DOCKER_HOST = 'localhost:2375'
-    }
+    tool Docker
     
     stages {
         stage('Build') {
