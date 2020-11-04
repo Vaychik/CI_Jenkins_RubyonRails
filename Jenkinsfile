@@ -13,7 +13,7 @@ pipeline {
             }
                 
             steps {
-                sh 'docker pull docker/getting-started'
+                sh 'docker pull -v /var/run/docker.sock:/var/run/docker.sock docker/getting-started'
                 sh 'ls -lrt'
                 sh 'ruby --version'
             }    
