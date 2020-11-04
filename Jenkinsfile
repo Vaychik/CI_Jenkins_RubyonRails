@@ -20,7 +20,8 @@ pipeline {
                 sh 'docker -H ${DOCKER_HOST} save -o $WORKSPACE/${IMAGE_FILE}.tar ${IMAGE_FILE}'
                 sh 'ls -lrt $WORKSPACE'
                 sh 'chmod 400 nomenclature.pem'
-                sh 'scp -o StrictHostKeyChecking=no -i nomenclature.pem $WORKSPACE/docker101tutorial.tar ubuntu@${HOST_1}:/${IMAGE_PATH}'
+                sh 'scp -o StrictHostKeyChecking=no -i nomenclature.pem $WORKSPACE/${IMAGE_FILE}.tar ubuntu@${HOST_1}:/${IMAGE_PATH}'
+                sh 'ssh -i nomenclature.pem ubuntu@{HOST_1} /scripts/deploy.sh'
             }    
         }
         
