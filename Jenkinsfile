@@ -1,5 +1,7 @@
 pipeline {
-    agent none
+    agent {
+        docker {image 'ruby:2.6.2'}
+    }
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -7,9 +9,11 @@ pipeline {
     
     stages {
         stage('Build') {
-            agent {docker 'docker:19'}
+            agent {
+                docker {image 'docker:19'}
+            }
             steps {
-                cmd 'docker'
+                sh 'docker version'
             }    
         }
         
