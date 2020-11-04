@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker -H tcp://0.0.0.0:2375 images'
-                sh 'docker -H tcp://0.0.0.0:2375 save -o $pwd/docker101tutorial.tar docker101tutorial
+                sh 'docker -H tcp://0.0.0.0:2375 save -o $pwd/docker101tutorial.tar docker101tutorial'
             }    
         }
         
