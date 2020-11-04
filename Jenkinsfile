@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "export DOCKER_HOST='tcp://0.0.0.0:2375'" >> ~/.bashrc'
+                sh 'echo "export DOCKER_HOST=localhost:2375" >> ~/.bashrc'
                 sh 'source ~/.bashrc'    
                 sh 'docker images'
             
