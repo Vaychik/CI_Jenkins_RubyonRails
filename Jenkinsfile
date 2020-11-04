@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Deploy Host 1') {
             steps {
-                sh 'docker -H ${DOCKER_HOST} pull docker101tutorial'
+                sh 'docker -H ${DOCKER_HOST} pull docker/getting-started'
                 sh 'docker -H ${DOCKER_HOST} images'
                 sh 'docker -H ${DOCKER_HOST} save -o $WORKSPACE/${IMAGE_FILE}.tar ${IMAGE_FILE}'
                 sh 'ls -lrt $WORKSPACE'
