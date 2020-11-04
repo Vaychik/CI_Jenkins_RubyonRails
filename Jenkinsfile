@@ -8,7 +8,7 @@ pipeline {
     
     stages {
         stage('Build') {
-            agent {label "docker-agent"
+            agent {label "master"
                 }
                 
             steps {
