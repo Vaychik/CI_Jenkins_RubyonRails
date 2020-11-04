@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker -H tcp://0.0.0.0:2375 images'
-                sh 'docker -H tcp://0.0.0.0:2375 pull docker/getting-started'
+                sh 'docker -H tcp://0.0.0.0:2375 pull docker/getting-started docker101tutorial'
             }    
         }
         
