@@ -8,6 +8,9 @@ pipeline {
     stages {
         stage('Build') {
             agent {docker 'docker:19'}
+            steps {
+                sh 'docker'
+            }    
         }
         
     }
