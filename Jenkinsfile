@@ -8,8 +8,9 @@ pipeline {
     
     stages {
         stage('Build') {
-            agent {label "master"
-                }
+            agent {
+                docker {image 'benhall/dind-jenkins-agent'}
+            }
                 
             steps {
                 sh 'docker pull docker/getting-started'
