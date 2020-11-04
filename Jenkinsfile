@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                docker { image 'docker:19' }
+                docker { image 'ruby:2.6.2' }
             }
             steps {
                 sh 'docker pull docker/getting-started'
