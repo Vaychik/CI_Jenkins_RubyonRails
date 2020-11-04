@@ -9,9 +9,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "export DOCKER_HOST=tcp://0.0.0.0:2375" >> ~/.bash_profile'
-                sh 'docker images'
-            
+                sh 'docker -H tcp://0.0.0.0:2375 images'
+                sh 'docker -H tcp://0.0.0.0:2375 save -o $pwd/docker101tutorial.tar docker101tutorial
             }    
         }
         
