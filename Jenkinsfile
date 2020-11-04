@@ -14,6 +14,7 @@ pipeline {
                 
             steps {
                 sh 'docker -v /var/run/docker.sock:/var/run/docker.sock pull maven:latest'
+                sh 'docker ps -a'
             }    
         }
         
