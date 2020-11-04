@@ -13,11 +13,12 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                docker {image 'ruby --version'}
+                docker {image 'ruby:2.6.2'}
             }
             steps {
                 sh 'pwd'
                 sh 'ls -lrt'
+                sh 'ruby --version'
             }    
         }
         
