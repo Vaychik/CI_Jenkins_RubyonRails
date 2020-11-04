@@ -13,8 +13,10 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                docker {image 'ruby:2.6.2'}
+                docker {image 'ruby:2.6.2'
                 alwaysPull true
+                }
+                
             }
             steps {
                 sh 'pwd'
