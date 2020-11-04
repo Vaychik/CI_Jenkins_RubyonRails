@@ -30,6 +30,10 @@ pipeline {
         
     }
     
-    post { always {} }
+    post { 
+        always {
+            sh 'rm -f $WORKSPACE/${IMAGE_FILE}.tar'
+        }
+    }
     
 }
