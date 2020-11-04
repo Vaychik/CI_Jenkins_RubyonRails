@@ -8,7 +8,7 @@ pipeline {
     
     environment {
         IMAGE_PATH = '/images'
-        IMAGE_FILE = 'docker101tutorial'
+        IMAGE_FILE = 'docker/getting-started'
         DOCKER_HOST = 'tcp://0.0.0.0:2375'
         USER = 'ubuntu'
         HOST_1 = 'ec2-18-217-246-9.us-east-2.compute.amazonaws.com'
@@ -24,7 +24,7 @@ pipeline {
                 sh 'chmod 400 nomenclature.pem'
                 sh 'scp -o StrictHostKeyChecking=no -i nomenclature.pem $WORKSPACE/${IMAGE_FILE}.tar ${USER}@${HOST_1}:/${IMAGE_PATH}'
                 sh 'ssh -i nomenclature.pem ${USER}@${HOST_1} /scripts/deploy.sh'
-                sh 'rm -f $WORKSPACES/${docker101tutorial}.tar'
+                sh 'rm -f $WORKSPACES/${IMAGE_FILE}.tar'
             }    
         }
         
