@@ -10,6 +10,9 @@ pipeline {
             agent {
                 docker { image 'docker:19' }
             }
+            environment {
+                  HOME="."
+            }
             steps {
                 sh 'docker pull docker/getting-started'
             }
