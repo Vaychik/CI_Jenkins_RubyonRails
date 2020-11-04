@@ -8,7 +8,7 @@ pipeline {
     
     environment {
         IMAGE_PATH = '/images'
-        IMAGE_FILE = 'docker/getting-started'
+        IMAGE_FILE = 'docker101tutorial'
         DOCKER_HOST = 'tcp://0.0.0.0:2375'
         USER = 'ubuntu'
         HOST_1 = 'ec2-18-217-246-9.us-east-2.compute.amazonaws.com'
@@ -18,6 +18,7 @@ pipeline {
         stage('Deploy Host 1') {
             steps {
                 sh 'docker -H ${DOCKER_HOST} pull docker/getting-started'
+                sh 'docker tag docker/getting-started:latest ${IMAGE_FILE}:latest'
                 sh 'docker -H ${DOCKER_HOST} images'
                 sh 'docker -H ${DOCKER_HOST} save -o $WORKSPACE/${IMAGE_FILE}.tar ${IMAGE_FILE}'
                 sh 'ls -lrt $WORKSPACE'
