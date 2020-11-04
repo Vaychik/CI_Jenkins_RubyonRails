@@ -11,7 +11,7 @@ pipeline {
             agent {label "master"
                 }
                 
-            }
+            
             steps {
                 sh 'pwd'
                 sh 'ls -lrt'
