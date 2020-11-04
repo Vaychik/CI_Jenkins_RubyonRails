@@ -15,7 +15,8 @@ pipeline {
             }
                 
             steps {
-                sh 'docker pull maven:latest'
+                sh 'docker -H tcp://0.0.0.0:2375 images'
+                sh 'docker -H tcp://0.0.0.0:2375 pull maven:latest'
             }    
         }
         
