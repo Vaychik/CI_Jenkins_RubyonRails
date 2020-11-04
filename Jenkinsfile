@@ -7,7 +7,7 @@ pipeline {
     }
     
     environment {
-        IMAGE_PATH = /images
+        IMAGE_PATH = '/images'
     }
     
     stages {
