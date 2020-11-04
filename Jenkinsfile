@@ -24,7 +24,7 @@ pipeline {
     
     post {
         always {
-            cleanWs()
+            sh 'End of the Jenkinsfile'
         }
     }
     
