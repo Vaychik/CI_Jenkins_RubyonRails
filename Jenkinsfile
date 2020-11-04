@@ -1,6 +1,6 @@
 pipeline {
     
-    agent none
+    agent {label 'master'}
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -8,12 +8,6 @@ pipeline {
     
     stages {
         stage('Build') {
-            agent {
-                docker {image 'docker:19'
-                        args '-v /var/run/docker.sock:/var/run/docker.sock'
-                }
-            }
-                
             steps {
                 sh 'docker -H tcp://0.0.0.0:2375 images'
                 sh 'docker -H tcp://0.0.0.0:2375 pull maven:latest'
