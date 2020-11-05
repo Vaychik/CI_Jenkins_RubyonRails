@@ -24,8 +24,8 @@ pipeline {
                 sh 'docker -H ${DOCKER_HOST} save -o $WORKSPACE/${IMAGE_FILE}.tar ${IMAGE_FILE}'
                 sh 'ls -lrt $WORKSPACE'
                 // sh 'chmod 400 nomenclature.pem'
-                sh 'scp -o StrictHostKeyChecking=no -i ${CRED_FILE} $WORKSPACE/${IMAGE_FILE}.tar ${USER}@${HOST_1}:/${IMAGE_PATH}'
-                sh 'ssh -i ${CRED_FILE} ${USER}@${HOST_1} /scripts/deploy.sh'
+                sh 'scp -o StrictHostKeyChecking=no -i ${CRED_FILE} $WORKSPACE/${IMAGE_FILE}.tar ${USER}@${HOST_IP_1}:/${IMAGE_PATH}'
+                sh 'ssh -i ${CRED_FILE} ${USER}@${HOST_IP_1} /scripts/deploy.sh'
             }    
         }
         
