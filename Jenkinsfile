@@ -11,7 +11,7 @@ pipeline {
         IMAGE_FILE = 'docker101tutorial'
         DOCKER_HOST = 'tcp://0.0.0.0:2375'
         USER = 'ubuntu'
-        HOST_1 = 'ec2-18-217-246-9.us-east-2.compute.amazonaws.com'
+        HOST_IP_1 = '18.188.21.145'
         CRED_FILE = credentials('nomenclature')
     }
     
